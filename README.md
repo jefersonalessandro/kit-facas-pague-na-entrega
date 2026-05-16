@@ -42,6 +42,14 @@ Tag instalada:
 
 `AW-16681014319`
 
+## Vercel Analytics
+
+Web Analytics instalado via script HTML estatico:
+
+`/_vercel/insights/script.js`
+
+Depois do deploy, ative Web Analytics no painel da Vercel e visite a pagina publicada para gerar a primeira visualizacao.
+
 Copy pronta para preencher o anuncio responsivo de pesquisa:
 
 `google-ads/copy-kit-facas.md`
