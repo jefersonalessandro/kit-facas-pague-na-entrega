@@ -41,3 +41,11 @@ O rodape usa os links de politica, termos e trocas da pagina do produtor.
 Tag instalada:
 
 `AW-16681014319`
+
+Copy pronta para preencher o anuncio responsivo de pesquisa:
+
+`google-ads/copy-kit-facas.md`
+
+CSV com titulos, descricoes, URL final e caminhos de exibicao:
+
+`google-ads/rsa-kit-facas.csv`
