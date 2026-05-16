@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/kit-facas-pague-na-entrega",
+      "destination": "/index.html"
+    }
+  ]
+}
