@@ -50,6 +50,12 @@ Web Analytics instalado via script HTML estatico:
 
 Depois do deploy, ative Web Analytics no painel da Vercel e visite a pagina publicada para gerar a primeira visualizacao.
 
+## Filtripixel
+
+Script instalado no head para medir cliques da presell:
+
+`e9996153-28be-462e-956a-0543418071aa`
+
 Copy pronta para preencher o anuncio responsivo de pesquisa:
 
 `google-ads/copy-kit-facas.md`
