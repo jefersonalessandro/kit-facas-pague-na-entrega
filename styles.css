@@ -136,6 +136,7 @@ h3 {
 }
 
 .price-box small,
+.mini-price small,
 .order-form small {
   color: var(--muted);
   font-size: 14px;
