@@ -1,221 +1,846 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kit de Facas Profissional | Pague na Entrega</title>
-    <meta name="description" content="Kit de facas profissional com 6 peças, frete grátis e pagamento somente na entrega.">
-    <link rel="preconnect" href="https://mastersite.shop">
-    <link rel="stylesheet" href="/styles.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16681014319"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit de Facas Profissional | Pague na Entrega</title>
+<meta name="description" content="Kit de facas profissional com 6 peças, frete grátis e pagamento somente na entrega.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16681014319"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-16681014319');
+</script>
+<!-- Start Filtripixel tracking -->
+<script data-render-head="true" src="https://static.filtripixel.io/filtripixel.minify.js?pixelId=e9996153-28be-462e-956a-0543418071aa"></script>
+<!-- End Filtripixel tracking -->
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde: #1a6b2f;
+  --verde-escuro: #134d22;
+  --verde-claro: #2d9e4f;
+  --vermelho: #c0392b;
+  --amarelo: #f39c12;
+  --amarelo-escuro: #d68910;
+  --cinza-claro: #f5f5f0;
+  --cinza: #888;
+  --preto: #111;
+  --branco: #fff;
+  --fonte-titulo: 'Oswald', sans-serif;
+  --fonte-corpo: 'Source Sans 3', sans-serif;
+}
 
-      gtag('config', 'AW-16681014319');
-    </script>
-    <!-- Start Filtripixel tracking (filtripixel.minify.js) -->
-    <script data-render-head="true" src="https://static.filtripixel.io/filtripixel.minify.js?pixelId=e9996153-28be-462e-956a-0543418071aa"></script>
-    <!-- End Filtripixel tracking (filtripixel.minify.js) -->
-    <script>
-      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
-  </head>
-  <body>
-    <header class="trust-bar">
-      <span>Pague somente na entrega</span>
-      <span>Frete grátis</span>
-      <span>Entrega em até 3 dias</span>
-    </header>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <main>
-      <section class="hero" id="topo">
-        <div class="hero-copy">
-          <p class="eyebrow">Oferta especial com entrega agendada</p>
-          <h1>Kit de Facas para Churrasco e Cozinha com 6 peças antiaderentes</h1>
-          <p class="lead">Facas super afiadas com lâminas antiaderentes e cabos ergonômicos para cortar carnes, legumes, frutas e pães com mais firmeza.</p>
+body {
+  font-family: var(--fonte-corpo);
+  color: var(--preto);
+  background: var(--branco);
+  font-size: 16px;
+  line-height: 1.6;
+}
 
-          <div class="price-box" aria-label="Preço da oferta">
-            <span class="old-price">De R$ 189,90</span>
-            <strong>Por R$ 139,90</strong>
-            <small>ou 12x de R$ 14,35 no cartão</small>
-            <small>Você não paga nada agora. O pagamento é feito somente quando o produto chegar.</small>
-          </div>
+/* BARRA TOPO */
+.barra-topo {
+  background: var(--verde-escuro);
+  color: #fff;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.barra-topo span { display: flex; align-items: center; gap: 6px; }
 
-          <div class="hero-actions">
-            <a class="button primary" href="https://entrega.logzz.com.br/pay/memo80xdl/1-kit-com-6-facas-profissional">Quero pagar na entrega</a>
-            <a class="button secondary" href="#como-funciona">Como funciona</a>
-          </div>
+/* URGÊNCIA */
+.barra-urgencia {
+  background: var(--vermelho);
+  color: #fff;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--fonte-titulo);
+  letter-spacing: 0.5px;
+}
+.barra-urgencia #timer {
+  font-size: 20px;
+  font-weight: 700;
+  background: rgba(0,0,0,0.25);
+  padding: 2px 10px;
+  border-radius: 4px;
+  margin-left: 8px;
+  display: inline-block;
+  min-width: 60px;
+}
 
-          <ul class="quick-proofs" aria-label="Benefícios principais">
-            <li>Pagamento na entrega</li>
-            <li>Frete R$ 0,00</li>
-            <li>Garantia de 7 dias</li>
-          </ul>
-        </div>
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #f9f9f5 0%, #eef5ec 100%);
+  padding: 32px 20px 40px;
+}
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.hero-badge {
+  background: var(--vermelho);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+.hero h1 {
+  font-family: var(--fonte-titulo);
+  font-size: 36px;
+  line-height: 1.15;
+  color: var(--verde-escuro);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.hero-desc {
+  color: #444;
+  font-size: 15px;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+.preco-bloco {
+  background: #fff;
+  border: 2px solid #e0e0d8;
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+.preco-de {
+  text-decoration: line-through;
+  color: var(--cinza);
+  font-size: 15px;
+}
+.preco-por {
+  font-family: var(--fonte-titulo);
+  font-size: 42px;
+  color: var(--verde);
+  line-height: 1;
+  margin: 4px 0;
+}
+.preco-parcel {
+  color: #555;
+  font-size: 13px;
+}
+.preco-obs {
+  color: var(--verde);
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+.btn-principal {
+  display: block;
+  background: linear-gradient(180deg, var(--verde-claro) 0%, var(--verde) 100%);
+  color: #fff;
+  text-align: center;
+  padding: 18px 24px;
+  border-radius: 8px;
+  font-family: var(--fonte-titulo);
+  font-size: 22px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 0 4px 16px rgba(26,107,47,0.35);
+  transition: all 0.2s;
+  margin-bottom: 14px;
+  border: none;
+  cursor: pointer;
+}
+.btn-principal:hover {
+  background: linear-gradient(180deg, #35b55e 0%, #1a6b2f 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26,107,47,0.45);
+}
+.btn-principal small {
+  display: block;
+  font-size: 13px;
+  font-family: var(--fonte-corpo);
+  font-weight: 400;
+  opacity: 0.9;
+  margin-top: 2px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.garantias {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.garantia-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #444;
+  font-weight: 600;
+}
+.garantia-item .icone { color: var(--verde); font-size: 16px; }
 
-        <div class="product-showcase" aria-label="Imagem do Kit de Facas Profissional">
-          <img src="/assets/kit-facas-principal.webp" alt="Kit de facas profissional com lâminas pretas e acessórios">
-          <div class="floating-offer">
-            <span>Economize R$ 50,00</span>
-            <strong>1 kit completo</strong>
-          </div>
-        </div>
-      </section>
+/* IMAGEM HERO */
+.hero-img-wrap {
+  position: relative;
+}
+.hero-img-wrap img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+.hero-badge-img {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--vermelho);
+  color: #fff;
+  font-family: var(--fonte-titulo);
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-align: center;
+  line-height: 1.2;
+}
+.hero-badge-img strong { display: block; font-size: 18px; }
 
-      <section class="benefits">
-        <div class="section-heading">
-          <p class="eyebrow">Detalhes que fazem diferença</p>
-          <h2>Ferramenta certa para cada corte</h2>
-        </div>
-        <div class="benefit-grid">
-          <article>
-            <span class="check">✓</span>
-            <h3>Lâminas afiadas</h3>
-            <p>Cortes mais firmes em carnes, frutas, verduras e legumes.</p>
-          </article>
-          <article>
-            <span class="check">✓</span>
-            <h3>Cabo ergonômico</h3>
-            <p>Mais conforto, apoio e controle durante o preparo.</p>
-          </article>
-          <article>
-            <span class="check">✓</span>
-            <h3>Antiaderente</h3>
-            <p>Ajuda no corte e facilita a limpeza depois do uso.</p>
-          </article>
-          <article>
-            <span class="check">✓</span>
-            <h3>Inoxidável</h3>
-            <p>Aço inox com alto teor de carbono e boa durabilidade.</p>
-          </article>
-        </div>
-      </section>
+/* PROVA SOCIAL */
+.prova-social {
+  background: var(--verde-escuro);
+  color: #fff;
+  text-align: center;
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.prova-social span {
+  background: var(--amarelo);
+  color: #000;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  margin: 0 4px;
+}
 
-      <section class="gallery" aria-label="Fotos do Kit de Facas">
-        <div class="section-heading">
-          <p class="eyebrow">Mais detalhes do produto</p>
-          <h2>Visual moderno, corte firme e peças para diferentes preparos</h2>
-        </div>
-        <div class="gallery-grid">
-          <img src="/assets/kit-facas-usos.webp" alt="Montagem mostrando o kit de facas em churrasco, peixe e vegetais">
-          <img src="/assets/kit-facas-inclusos.webp" alt="Kit de facas completo com tesoura e descascador">
-        </div>
-      </section>
+/* SEÇÕES GERAIS */
+.secao {
+  padding: 48px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.secao-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 28px;
+  color: var(--verde-escuro);
+  text-align: center;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.secao-sub {
+  text-align: center;
+  color: var(--cinza);
+  margin-bottom: 32px;
+  font-size: 15px;
+}
+.divisor {
+  width: 60px;
+  height: 4px;
+  background: var(--verde);
+  margin: 10px auto 28px;
+  border-radius: 2px;
+}
 
-      <section class="included" id="kit">
-        <div class="included-copy">
-          <p class="eyebrow">Itens inclusos</p>
-          <h2>Kit completo com 6 peças</h2>
-          <p>Um conjunto pensado para churrasco e cozinha, com peças para cortes grandes, fatiar alimentos e preparar detalhes do dia a dia.</p>
-          <img class="included-photo" src="/assets/medidas-kit-facas.webp" alt="Medidas das facas, tesoura e descascador inclusos no kit">
-        </div>
-        <ul class="included-list">
-          <li><strong>Faca do chef</strong><span>Versátil para carnes e legumes.</span></li>
-          <li><strong>Cutelo</strong><span>Ideal para fatias firmes e precisas.</span></li>
-          <li><strong>Faca de pão</strong><span>Corta pães sem esfarelar.</span></li>
-          <li><strong>Faca de fruta</strong><span>Precisão para cortes delicados.</span></li>
-          <li><strong>Descascador</strong><span>Leve e afiado para legumes e frutas.</span></li>
-          <li><strong>Tesoura de cozinha</strong><span>Multiuso para ervas, embalagens e cortes leves.</span></li>
-        </ul>
-      </section>
+/* BENEFÍCIOS */
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.beneficio-card {
+  background: var(--cinza-claro);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  border-left: 4px solid var(--verde);
+}
+.beneficio-icone {
+  font-size: 28px;
+  line-height: 1;
+  min-width: 36px;
+}
+.beneficio-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 16px;
+  color: var(--verde-escuro);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+.beneficio-desc { font-size: 14px; color: #555; }
 
-      <section class="cod-strip" id="como-funciona">
-        <div>
-          <p class="eyebrow">Compra simples e segura</p>
-          <h2>Você paga apenas quando receber</h2>
-        </div>
-        <div class="steps">
-          <article>
-            <span>1</span>
-            <p>Clique no botão e preencha seus dados no checkout seguro.</p>
-          </article>
-          <article>
-            <span>2</span>
-            <p>Escolha o dia para receber o entregador no seu endereço.</p>
-          </article>
-          <article>
-            <span>3</span>
-            <p>Pague ao entregador no dinheiro, Pix, débito ou crédito.</p>
-          </article>
-        </div>
-      </section>
+/* IMAGENS PRODUTO */
+.imgs-produto {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.imgs-produto img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
 
-      <section class="proof">
-        <div class="section-heading">
-          <p class="eyebrow">Veja o produto em uso</p>
-          <h2>Demonstração rápida do corte</h2>
-        </div>
-        <div class="demo-layout video-feature">
-          <iframe class="shorts-video" src="https://www.youtube.com/embed/foCWvr93uLo" title="Demonstração do Kit de Facas em vídeo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          <img class="demo-gif" src="/assets/kit-facas-corte.gif" alt="Demonstração de faca cortando alimento sobre uma tábua">
-        </div>
-        <div class="demo-layout spec-layout">
-          <div class="spec-card">
-            <h3>Especificações técnicas</h3>
-            <ul class="spec-list">
-              <li><strong>Lâminas:</strong> aço inox com alto teor de carbono</li>
-              <li><strong>Revestimento:</strong> antiaderente de alta performance</li>
-              <li><strong>Afiação:</strong> ângulo de precisão</li>
-              <li><strong>Cabos:</strong> ergonômicos e antiderrapantes</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+/* PEÇAS */
+.pecas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.peca-item {
+  background: var(--cinza-claro);
+  border-radius: 8px;
+  padding: 14px 16px;
+  text-align: center;
+}
+.peca-item .peca-nome {
+  font-family: var(--fonte-titulo);
+  font-size: 15px;
+  color: var(--verde-escuro);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+.peca-item .peca-desc { font-size: 13px; color: #666; }
 
-      <section class="confidence">
-        <article>
-          <h3>Frete grátis</h3>
-          <p>A oferta já inclui frete grátis no checkout.</p>
-        </article>
-        <article>
-          <h3>Entrega rápida</h3>
-          <p>Entrega prevista em até 3 dias, conforme disponibilidade da região.</p>
-        </article>
-        <article>
-          <h3>Risco zero</h3>
-          <p>Você só paga quando estiver com o produto em mãos.</p>
-        </article>
-      </section>
+/* COMO FUNCIONA */
+.como-funciona-bg {
+  background: linear-gradient(135deg, var(--verde-escuro) 0%, var(--verde) 100%);
+  padding: 48px 20px;
+}
+.como-funciona-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.como-funciona-bg .secao-titulo { color: #fff; }
+.como-funciona-bg .divisor { background: var(--amarelo); }
+.passos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.passo {
+  text-align: center;
+  color: #fff;
+}
+.passo-num {
+  width: 52px;
+  height: 52px;
+  background: var(--amarelo);
+  color: #000;
+  font-family: var(--fonte-titulo);
+  font-size: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  font-weight: 700;
+}
+.passo-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 16px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.passo-desc { font-size: 14px; opacity: 0.9; }
 
-      <section class="order" id="oferta">
-        <div class="order-copy">
-          <p class="eyebrow">Queima total</p>
-          <h2>Garanta 1 Kit de Facas por R$ 139,90</h2>
-          <p>Oferta com 6 peças completas, frete grátis e pagamento somente na entrega.</p>
-          <div class="mini-price">
-            <span>De R$ 189,90</span>
-            <strong>R$ 139,90</strong>
-            <small>ou 12x de R$ 14,35 no cartão</small>
-          </div>
-        </div>
+/* DEPOIMENTOS */
+.depoimentos-bg { background: var(--cinza-claro); padding: 48px 20px; }
+.depoimentos-inner { max-width: 900px; margin: 0 auto; }
+.depoimentos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.depoimento-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  position: relative;
+}
+.depoimento-estrelas { color: #f4c430; font-size: 18px; margin-bottom: 10px; }
+.depoimento-texto {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 14px;
+  font-style: italic;
+}
+.depoimento-autor {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--verde-escuro);
+}
+.depoimento-cidade { font-size: 12px; color: var(--cinza); }
+.depoimento-verificado {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--verde);
+  font-weight: 600;
+  margin-top: 8px;
+}
 
-        <div class="checkout-card">
-          <h3>Resumo da oferta</h3>
-          <ul>
-            <li>✓ 1 kit com 6 peças</li>
-            <li>✓ Frete grátis</li>
-            <li>✓ Pagamento na entrega</li>
-            <li>✓ Garantia de 7 dias</li>
-          </ul>
-          <a class="button primary full" href="https://entrega.logzz.com.br/pay/memo80xdl/1-kit-com-6-facas-profissional">Ir para pagamento na entrega</a>
-          <small>Você será direcionado para o checkout seguro da Logzz.</small>
-        </div>
-      </section>
-    </main>
+/* ESPECIFICAÇÕES */
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.spec-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--cinza-claro);
+  border-radius: 8px;
+}
+.spec-label { font-weight: 700; color: var(--verde-escuro); font-size: 14px; min-width: 110px; }
+.spec-val { font-size: 14px; color: #555; }
 
-    <footer>
-      <nav class="policy-links" aria-label="Políticas da loja">
-        <a href="https://peguenaentrega.com.br/politica-privacidade/">Política de Privacidade</a>
-        <a href="https://peguenaentrega.com.br/termos-de-uso/">Termos de Uso</a>
-        <a href="https://peguenaentrega.com.br/trocas-e-devolucoes/">Trocas e Devoluções</a>
-      </nav>
-      <p>Kit de Facas Profissional - oferta sujeita à disponibilidade de estoque.</p>
-    </footer>
+/* GARANTIA */
+.garantia-bg {
+  background: #fff8e1;
+  border: 2px solid var(--amarelo);
+  border-radius: 12px;
+  padding: 28px;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.garantia-bg .garantia-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: 22px;
+  color: var(--verde-escuro);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.garantia-bg p { font-size: 15px; color: #555; line-height: 1.7; }
 
-    <a class="sticky-cta" href="https://entrega.logzz.com.br/pay/memo80xdl/1-kit-com-6-facas-profissional">Pagar na entrega</a>
-  </body>
+/* CTA FINAL */
+.cta-final {
+  background: linear-gradient(135deg, #f9f9f5 0%, #eef5ec 100%);
+  padding: 56px 20px;
+  text-align: center;
+}
+.cta-final-inner { max-width: 600px; margin: 0 auto; }
+.cta-final .secao-titulo { font-size: 32px; }
+.cta-preco-final {
+  margin: 24px 0;
+}
+.cta-preco-final .de {
+  text-decoration: line-through;
+  color: var(--cinza);
+  font-size: 16px;
+}
+.cta-preco-final .por {
+  font-family: var(--fonte-titulo);
+  font-size: 52px;
+  color: var(--verde);
+  line-height: 1;
+  display: block;
+  margin: 4px 0;
+}
+.cta-preco-final .parcel { font-size: 14px; color: #555; }
+.resumo-oferta {
+  background: #fff;
+  border: 2px solid #e0e0d8;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 24px 0;
+  text-align: left;
+}
+.resumo-oferta h4 {
+  font-family: var(--fonte-titulo);
+  font-size: 16px;
+  color: var(--verde-escuro);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.resumo-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #333;
+}
+.resumo-item .check { color: var(--verde); font-weight: 700; font-size: 18px; }
+
+/* RODAPÉ */
+.rodape {
+  background: var(--verde-escuro);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 13px;
+}
+.rodape a { color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 8px; }
+.rodape a:hover { color: #fff; }
+.rodape p { margin-bottom: 8px; }
+
+/* MOBILE */
+@media (max-width: 680px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 28px; }
+  .hero-img-wrap { order: -1; }
+  .beneficios-grid { grid-template-columns: 1fr; }
+  .pecas-grid { grid-template-columns: repeat(2, 1fr); }
+  .passos { grid-template-columns: 1fr; gap: 16px; }
+  .depoimentos-grid { grid-template-columns: 1fr; }
+  .specs-grid { grid-template-columns: 1fr; }
+  .imgs-produto { grid-template-columns: 1fr; }
+  .barra-topo { gap: 12px; font-size: 12px; }
+  .preco-por { font-size: 36px; }
+  .cta-final .por { font-size: 42px; }
+}
+</style>
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<!-- BARRA TOPO -->
+<div class="barra-topo">
+  <span>🚚 Frete Grátis</span>
+  <span>💳 Pague Somente na Entrega</span>
+  <span>📦 Entrega em até 3 dias</span>
+</div>
+
+<!-- BARRA URGÊNCIA + TIMER -->
+<div class="barra-urgencia">
+  🔥 OFERTA RELÂMPAGO — Termina em: <span id="timer">15:00</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-texto">
+      <div class="hero-badge">Oferta Especial com Entrega Agendada</div>
+      <h1>Kit de Facas para Churrasco e Cozinha com 6 peças antiaderentes</h1>
+      <p class="hero-desc">Facas super afiadas com lâminas antiaderentes e cabos ergonômicos para cortar carnes, legumes, frutas e pães com mais firmeza.</p>
+
+      <div class="preco-bloco">
+        <div class="preco-de">De R$ 259,90</div>
+        <div class="preco-por">R$ 119,90</div>
+        <div class="preco-parcel">ou 12x de R$ 11,90 no cartão</div>
+        <div class="preco-obs">✓ Você não paga nada agora. Pague só quando chegar.</div>
+      </div>
+
+      <a href="https://entrega.logzz.com.br/pay/memo80xdl/1-kit-com-6-facas-oferta" class="btn-principal">
+        Quero Pagar na Entrega
+        <small>Clique e preencha seu endereço — grátis</small>
+      </a>
+
+      <div class="garantias">
+        <div class="garantia-item"><span class="icone">✓</span> Pagamento na entrega</div>
+        <div class="garantia-item"><span class="icone">✓</span> Frete R$ 0,00</div>
+        <div class="garantia-item"><span class="icone">✓</span> Garantia de 7 dias</div>
+      </div>
+    </div>
+
+    <div class="hero-img-wrap">
+      <img src="https://kit-facas-pague-na-entrega.vercel.app/assets/kit-facas-principal.webp" alt="Kit de facas profissional com 6 peças antiaderentes">
+      <div class="hero-badge-img">Economize<strong>R$ 140</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<div class="prova-social">
+  🔥 <span id="compradores">127</span> pessoas pediram este kit hoje — estoque limitado!
+</div>
+
+<!-- BENEFÍCIOS -->
+<section class="secao">
+  <div class="secao-titulo">Ferramenta certa para cada corte</div>
+  <div class="divisor"></div>
+  <div class="beneficios-grid">
+    <div class="beneficio-card">
+      <div class="beneficio-icone">🔪</div>
+      <div>
+        <div class="beneficio-titulo">Lâminas Ultra Afiadas</div>
+        <div class="beneficio-desc">Cortes mais firmes em carnes, frutas, verduras e legumes sem esforço.</div>
+      </div>
+    </div>
+    <div class="beneficio-card">
+      <div class="beneficio-icone">✋</div>
+      <div>
+        <div class="beneficio-titulo">Cabo Ergonômico</div>
+        <div class="beneficio-desc">Mais conforto, apoio e controle durante o preparo de qualquer receita.</div>
+      </div>
+    </div>
+    <div class="beneficio-card">
+      <div class="beneficio-icone">🧼</div>
+      <div>
+        <div class="beneficio-titulo">Antiaderente</div>
+        <div class="beneficio-desc">Facilita o corte e simplifica a limpeza depois do uso.</div>
+      </div>
+    </div>
+    <div class="beneficio-card">
+      <div class="beneficio-icone">⚙️</div>
+      <div>
+        <div class="beneficio-titulo">Inoxidável</div>
+        <div class="beneficio-desc">Aço inox com alto teor de carbono. Durável e resistente ao uso diário.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGENS PRODUTO -->
+<section class="secao" style="padding-top:0">
+  <div class="secao-titulo">Visual moderno, corte firme</div>
+  <div class="divisor"></div>
+  <div class="imgs-produto">
+    <img src="https://kit-facas-pague-na-entrega.vercel.app/assets/kit-facas-usos.webp" alt="Kit de facas em uso no churrasco e cozinha">
+    <img src="https://kit-facas-pague-na-entrega.vercel.app/assets/kit-facas-inclusos.webp" alt="Kit de facas completo com tesoura e descascador">
+  </div>
+</section>
+
+<!-- KIT COMPLETO -->
+<section class="secao" style="padding-top:0">
+  <div class="secao-titulo">Kit completo com 6 peças</div>
+  <div class="divisor"></div>
+  <p style="text-align:center;color:#555;margin-bottom:24px;font-size:15px;">Um conjunto pensado para churrasco e cozinha, com peças para cortes grandes, fatiar alimentos e preparar detalhes do dia a dia.</p>
+  <div class="pecas-grid">
+    <div class="peca-item">
+      <div class="peca-nome">Faca do Chef</div>
+      <div class="peca-desc">Versátil para carnes e legumes.</div>
+    </div>
+    <div class="peca-item">
+      <div class="peca-nome">Cutelo</div>
+      <div class="peca-desc">Ideal para fatias firmes e precisas.</div>
+    </div>
+    <div class="peca-item">
+      <div class="peca-nome">Faca de Pão</div>
+      <div class="peca-desc">Corta pães sem esfarelar.</div>
+    </div>
+    <div class="peca-item">
+      <div class="peca-nome">Faca de Fruta</div>
+      <div class="peca-desc">Precisão para cortes delicados.</div>
+    </div>
+    <div class="peca-item">
+      <div class="peca-nome">Descascador</div>
+      <div class="peca-desc">Leve e afiado para legumes e frutas.</div>
+    </div>
+    <div class="peca-item">
+      <div class="peca-nome">Tesoura</div>
+      <div class="peca-desc">Multiuso para ervas e embalagens.</div>
+    </div>
+  </div>
+  <div style="margin-top:20px;text-align:center;">
+    <img src="https://kit-facas-pague-na-entrega.vercel.app/assets/medidas-kit-facas.webp" alt="Medidas das facas, tesoura e descascador inclusos no kit" style="max-width:100%;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+  </div>
+</section>
+
+<!-- DEMONSTRAÇÃO -->
+<section class="secao" style="padding-top:0">
+  <div class="secao-titulo">Veja o produto em uso</div>
+  <div class="divisor"></div>
+  <p class="secao-sub">Demonstração rápida do corte</p>
+  <div style="text-align:center;">
+    <img src="https://kit-facas-pague-na-entrega.vercel.app/assets/kit-facas-corte.gif" alt="Demonstração de faca cortando alimento" style="max-width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.1);">
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="como-funciona-bg" id="como-funciona">
+  <div class="como-funciona-inner">
+    <div class="secao-titulo">Você paga apenas quando receber</div>
+    <div class="divisor"></div>
+    <div class="passos">
+      <div class="passo">
+        <div class="passo-num">1</div>
+        <div class="passo-titulo">Preencha seus dados</div>
+        <div class="passo-desc">Clique no botão e informe seu nome e endereço no checkout seguro.</div>
+      </div>
+      <div class="passo">
+        <div class="passo-num">2</div>
+        <div class="passo-titulo">Escolha o dia</div>
+        <div class="passo-desc">Agende o dia para receber o entregador no seu endereço.</div>
+      </div>
+      <div class="passo">
+        <div class="passo-num">3</div>
+        <div class="passo-titulo">Pague na hora</div>
+        <div class="passo-desc">Pague ao entregador em dinheiro, Pix, débito ou crédito.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depoimentos-bg">
+  <div class="depoimentos-inner">
+    <div class="secao-titulo">O que nossos clientes dizem</div>
+    <div class="divisor"></div>
+    <div class="depoimentos-grid">
+      <div class="depoimento-card">
+        <div class="depoimento-estrelas">★★★★★</div>
+        <div class="depoimento-texto">"Comprei para minha mãe e ela adorou! As facas são muito afiadas, o cabo não escorrega. Chegou em 2 dias e paguei só na entrega. Super recomendo!"</div>
+        <div class="depoimento-autor">Marcos S.</div>
+        <div class="depoimento-cidade">Fortaleza - CE</div>
+        <div class="depoimento-verificado">✓ Compra verificada</div>
+      </div>
+      <div class="depoimento-card">
+        <div class="depoimento-estrelas">★★★★★</div>
+        <div class="depoimento-texto">"Fiquei com medo de pagar e não chegar, mas o pagamento é só na entrega mesmo. Produto chegou certinho, qualidade muito boa pelo preço."</div>
+        <div class="depoimento-autor">Ana L.</div>
+        <div class="depoimento-cidade">Recife - PE</div>
+        <div class="depoimento-verificado">✓ Compra verificada</div>
+      </div>
+      <div class="depoimento-card">
+        <div class="depoimento-estrelas">★★★★★</div>
+        <div class="depoimento-texto">"Melhor kit que já tive na cozinha. Cortei a carne do churrasco com facilidade. O descascador também é ótimo. Valeu muito o preço!"</div>
+        <div class="depoimento-autor">Carla M.</div>
+        <div class="depoimento-cidade">Teresina - PI</div>
+        <div class="depoimento-verificado">✓ Compra verificada</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPECIFICAÇÕES -->
+<section class="secao">
+  <div class="secao-titulo">Especificações técnicas</div>
+  <div class="divisor"></div>
+  <div class="specs-grid">
+    <div class="spec-item">
+      <span class="spec-label">Lâminas</span>
+      <span class="spec-val">Aço inox com alto teor de carbono</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Revestimento</span>
+      <span class="spec-val">Antiaderente de alta performance</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Afiação</span>
+      <span class="spec-val">Ângulo de precisão</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Cabos</span>
+      <span class="spec-val">Ergonômicos e antiderrapantes</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Entrega</span>
+      <span class="spec-val">Até 3 dias, frete grátis</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-label">Garantia</span>
+      <span class="spec-val">7 dias após o recebimento</span>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="secao" style="padding-top:0">
+  <div class="garantia-bg">
+    <div style="font-size:48px;margin-bottom:12px;">🛡️</div>
+    <div class="garantia-titulo">Risco Zero — Garantia de 7 dias</div>
+    <p>Você só paga quando estiver com o produto em mãos. Se não gostar por qualquer motivo, a garantia cobre você. Sem burocracia.</p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-final-inner">
+    <div class="secao-titulo">Garanta seu Kit de Facas Agora</div>
+    <div class="divisor"></div>
+
+    <div class="cta-preco-final">
+      <div class="de">De R$ 259,90</div>
+      <span class="por">R$ 119,90</span>
+      <div class="parcel">ou 12x de R$ 11,90 no cartão — pague só na entrega</div>
+    </div>
+
+    <div class="resumo-oferta">
+      <h4>Resumo da oferta</h4>
+      <div class="resumo-item"><span class="check">✓</span> 1 kit completo com 6 peças profissionais</div>
+      <div class="resumo-item"><span class="check">✓</span> Frete grátis para todo o Brasil</div>
+      <div class="resumo-item"><span class="check">✓</span> Pagamento somente na entrega</div>
+      <div class="resumo-item"><span class="check">✓</span> Garantia de 7 dias</div>
+      <div class="resumo-item"><span class="check">✓</span> Entrega em até 3 dias</div>
+    </div>
+
+    <a href="https://entrega.logzz.com.br/pay/memo80xdl/1-kit-com-6-facas-oferta" class="btn-principal">
+      Ir para Pagamento na Entrega 🔪
+      <small>Você será direcionado para o checkout seguro da Logzz</small>
+    </a>
+  </div>
+</section>
+
+<!-- RODAPÉ -->
+<footer class="rodape">
+  <p>
+    <a href="https://peguenaentrega.com.br/politica-privacidade/">Política de Privacidade</a>
+    <a href="https://peguenaentrega.com.br/termos-de-uso/">Termos de Uso</a>
+    <a href="https://peguenaentrega.com.br/trocas-e-devolucoes/">Trocas e Devoluções</a>
+  </p>
+  <p>Kit de Facas Profissional — oferta sujeita à disponibilidade de estoque.</p>
+</footer>
+
+<script>
+// TIMER COUNTDOWN
+function iniciarTimer(minutos) {
+  let total = minutos * 60;
+  const el = document.getElementById('timer');
+  const intervalo = setInterval(() => {
+    const m = Math.floor(total / 60).toString().padStart(2, '0');
+    const s = (total % 60).toString().padStart(2, '0');
+    el.textContent = m + ':' + s;
+    if (total <= 0) {
+      clearInterval(intervalo);
+      iniciarTimer(15); // reinicia
+    }
+    total--;
+  }, 1000);
+}
+iniciarTimer(15);
+
+// PROVA SOCIAL DINÂMICA
+function atualizarCompradores() {
+  const el = document.getElementById('compradores');
+  let base = 112;
+  setInterval(() => {
+    if (Math.random() > 0.6) {
+      base += Math.floor(Math.random() * 3) + 1;
+      el.textContent = base;
+    }
+  }, 8000);
+}
+atualizarCompradores();
+</script>
+
+</body>
 </html>
